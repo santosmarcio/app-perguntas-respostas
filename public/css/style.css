@@ -1,0 +1,7 @@
+body, nav{
+    background-color: rgb(203, 216, 228);
+}
+.navbar-brand{
+    color: aliceblue;
+    font-weight: bold;
+}

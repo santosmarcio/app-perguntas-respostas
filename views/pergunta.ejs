@@ -1,0 +1,43 @@
+<%- include("partials/header.ejs")  %> 
+<body>
+    <nav class="navbar navbar-expand-lg   bg-primary ">
+        <a href="/perguntar"><button class="navbar-brand btn" href="#">
+             Perguntar 
+            <i class="fas fa-question"></i>
+        </button></a>
+        <a href="/">
+            <button class="navbar-brand btn" href="#"> 
+            Outras perguntas <i class="fas fa-reply"></i>
+            </button>
+        </a>
+    </nav>
+<div class="container">
+
+    <h1>
+        <%= pergunta.titulo %> 
+    </h1>
+    <h2>
+        <%= pergunta.descricao %>
+    </h2>  
+    <hr>
+    <form action="/responder" method="POST">
+        <Label>Resposta</Label>
+        <br>
+        <textarea name="corpo" id="" class="form-control" cols="30" rows="10" placeholder="Digite sua resposta"></textarea>
+        <input type="hidden" name="pergunta" value="<%=pergunta.id%>">
+        <button class="btn btn-info" >Responder</button>
+    </form>
+    <hr>
+    <h3>Respostas</h3>
+    <% respostas.forEach(element => { %>
+        <br>
+
+        <div class="card">
+            <div class="card-body">
+                <p><%= element.corpo %></p>
+            </div>
+        </div>
+    <% }); %> 
+   </div>
+</body>
+<%- include("partials/footer.ejs")  %> 

@@ -1,0 +1,34 @@
+<%- include("partials/header.ejs")  %> 
+<body>
+   <nav class="navbar navbar-expand-lg   bg-primary ">
+      <a href="/perguntar"><button class="navbar-brand btn" href="#">
+           Perguntar
+          <i class="fas fa-question"></i>
+      </button></a>
+  </nav> 
+<div class="container">
+   <h1>Perguntas</h1>
+   <hr>
+   <% perguntas.forEach((pergunta) => { %>
+      <br>
+      <div class="card">
+         <div class="card-header">
+            <h6><%= pergunta.assunto  %> </h6> 
+         </div>
+         <div class="card-body">
+            <h3><%= pergunta.titulo  %> </h3> 
+            <div>
+               <% let filtro = respostas.filter((resposta)=>{ %>
+                  <% return (resposta.perguntaID === pergunta.id)  %>
+               <% }) %>
+            </div>
+         </div>
+         <div class="card-footer">
+            <a href="/pergunta/<%=pergunta.id%>"><button class="btn btn-info">Responder</button></a>
+               <%= filtro.length %> 
+         </div>
+      </div>
+      <% }) %> 
+   </div>
+</body>
+<%- include("partials/footer.ejs")  %> 
