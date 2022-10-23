@@ -1,2 +1,1 @@
-# appQuestionAndAnswer-
-Question and answer app using Node JS, Express, JS, Sequelize and MySQL
+App de pergustas e repostas Node JS, Express, JS, Sequelize and MySQL
